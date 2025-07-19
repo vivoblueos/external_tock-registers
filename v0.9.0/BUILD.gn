@@ -1,0 +1,11 @@
+import("//build/templates/build_template.gni")
+build_rust("tock_registers") {
+  crate_type = "rlib"
+  sources = [ "src/lib.rs" ]
+  edition = "2021"
+  features = [
+    "default",
+    "register_types",
+  ]
+  rustflags = [ "--cap-lints=allow" ]
+}
